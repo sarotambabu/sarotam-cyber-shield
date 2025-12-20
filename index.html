@@ -207,7 +207,7 @@
   <h2>Order Confirmed ✅</h2>
   <p>Thank you! Aapka order submit ho chuka hai.</p>
   <p>Payment ke baad hum aapse sampark karenge.</p>
-  <a class="btn" href="#contact">Pay Now</a>
+  <a class="btn" href="#" onclick="payViaUpi()">Pay via UPI</a>
 </section>
 
 <section id="admin" style="display:none;">
@@ -234,7 +234,7 @@
 
   <h3>Pay Online (UPI)</h3>
   <a class="btn"
-   href="upi://pay?pa=9341623002@upi&pn=Sarotam%20Cyber%20Shield&cu=INR">
+   href="upi://pay?pa=9341623002@axl&pn=Sarotam%20Cyber%20Shield&cu=INR"
    Pay via UPI
 </a>
 <br><br>
@@ -272,8 +272,14 @@
   let selectedPrice = 0;
 
   function openOrderForm(service, price) {
-    selectedService = service;
-    selectedPrice = price;
+  selectedService = service;
+  selectedPrice = price;
+
+  document.getElementById("orderServiceInfo").innerHTML =
+    `<b>Service:</b> ${service}<br><b>Amount:</b> ₹${price}`;
+
+  generateUpiQr(price);
+}
     document.getElementById('orderServiceInfo').innerHTML =
       `<strong>Service:</strong> ${service}<br><strong>Price:</strong> ₹${price}`;
     document.getElementById('order').style.display = 'block';
@@ -351,6 +357,17 @@ function sendWhatsAppAfterPayment() {
   );
 }
 <script>
+function payViaUpi() {
+  if (!selectedPrice) {
+    alert("Please select a service first");
+    return;
+  }
+
+  const upiLink =
+    `upi://pay?pa=9341623002@axl&pn=Sarotam%20Cyber%20Shield&am=${selectedPrice}&cu=INR`;
+
+  window.location.href = upiLink;
+}
   <script>
   const ADMIN_USER = "kalyani";
   const ADMIN_PASS = "9771659341";
@@ -377,5 +394,17 @@ function login() {
 
 <button class="btn" onclick="signup()">Signup</button>
 <!-- <button class="btn" onclick="signup()">Signup</button> -->
+function generateUpiQr(amount) {
+  const upiLink =
+    `upi://pay?pa=9341623002@axl&pn=Sarotam%20Cyber%20Shield&am=${amount}&cu=INR`;
+
+  document.getElementById("qrcode").innerHTML = "";
+
+  new QRCode(document.getElementById("qrcode"), {
+    text: upiLink,
+    width: 220,
+    height: 220
+  });
+}
 </body>
 </html>
