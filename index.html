@@ -210,9 +210,9 @@
   <a class="btn" href="#contact">Pay Now</a>
 </section>
 
-<section id="admin">
+<section id="admin" style="display:none;">
   <h2>Admin Panel (Orders)</h2>
-  <p><strong>Note:</strong> Ye sirf demo/admin use ke liye hai</p>
+  <p><strong>Note:</strong> Ye sirf admin ke liye hai</p>
   <ul id="orderList"></ul>
 </section>
 
@@ -233,7 +233,15 @@
   <p><strong>Address:</strong> Pushpanjali House, Navin Nagar, Nawada, Bihar</p>
 
   <h3>Pay Online (UPI)</h3>
-  <a class="btn" href="upi://pay?pa=9341623002@upi&pn=Sarotam%20Cyber%20Shield&cu=INR">Pay Now</a>
+  <a class="btn"
+   href="upi://pay?pa=9341623002@upi&pn=Sarotam%20Cyber%20Shield&cu=INR">
+   Pay via UPI
+</a>
+<br><br>
+
+<button class="btn" onclick="sendWhatsAppAfterPayment()">
+  Payment Done – Send WhatsApp
+</button>
 
   <h3 style="margin-top:20px;">Scan QR (UPI)</h3>
   <p><strong>UPI ID:</strong> 9341623002@axl</p>
@@ -323,6 +331,51 @@
 
   loadOrders();
 </script>
+function sendWhatsAppAfterPayment() {
+  const data = JSON.parse(localStorage.getItem('lastOrderWA'));
+  if (!data) {
+    alert("No order found");
+    return;
+  }
 
+  const message =
+    `Payment Done%0AService: ${data.service}%0A` +
+    `Price: ₹${data.price}%0A` +
+    `Name: ${data.name}%0A` +
+    `Phone: ${data.phone}%0A` +
+    `Address: ${data.address}`;
+
+  window.open(
+    `https://wa.me/919341623002?text=${message}`,
+    '_blank'
+  );
+}
+<script>
+  <script>
+  const ADMIN_USER = "kalyani";
+  const ADMIN_PASS = "9771659341";
+
+  let selectedService = '';
+  let selectedPrice = 0;
+function login() {
+  const user = document.getElementById('username').value;
+  const pass = document.getElementById('password').value;
+  const msg = document.getElementById('msg');
+
+  if (user === ADMIN_USER && pass === ADMIN_PASS) {
+    msg.innerText = "Admin login successful ✅";
+
+    // Admin panel show
+    document.getElementById('admin').style.display = "block";
+    window.location.href = "#admin";
+
+  } else {
+    msg.innerText = "Invalid login ❌";
+    document.getElementById('admin').style.display = "none";
+  }
+}
+
+<button class="btn" onclick="signup()">Signup</button>
+<!-- <button class="btn" onclick="signup()">Signup</button> -->
 </body>
 </html>
