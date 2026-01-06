@@ -1,411 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="q2ZbfUAPR7WddCL4oduB_m172piNnjzquNC_OrhgmgM" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sarotam Cyber Shield</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #e3f2fd, #f5f5f5);
-      color: #333;
-    }
-    header {
-      background: #0d6efd;
-      color: white;
-      padding: 25px;
-      text-align: center;
-    }
-    nav {
-      background: #084298;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover { text-decoration: underline; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarotam Cyber Shield</title>
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 20px auto;
-      background: white;
-      border-radius: 10px;
-    }
-    h2 { color: #0d6efd; }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #fafafa;
-      text-align: center;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #0d6efd;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-    }
-    .btn:hover { background: #084298; }
-
-    .auth-box {
-      max-width: 400px;
-      margin: auto;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    footer {
-      background: #0d6efd;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+}
+header{
+  background:#0d6efd;
+  color:#fff;
+  padding:25px;
+  text-align:center;
+}
+nav{
+  background:#084298;
+  text-align:center;
+  padding:10px;
+}
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+section{
+  max-width:1000px;
+  margin:20px auto;
+  background:white;
+  padding:25px;
+  border-radius:10px;
+}
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  border:1px solid #ddd;
+  padding:15px;
+  border-radius:8px;
+  text-align:center;
+}
+.btn{
+  background:#0d6efd;
+  color:white;
+  padding:10px 15px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+.btn:hover{background:#084298;}
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+}
+footer{
+  background:#0d6efd;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Sarotam Cyber Shield</h1>
-  <p>Computer Repair | Cyber Security | Website Design</p>
+<h1>Sarotam Cyber Shield</h1>
+<p>Computer Repair | Cyber Security | Website Design</p>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#login">Login</a>
-  <a href="#contact">Contact</a>
+<a href="#services">Services</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    Sarotam Cyber Shield ek professional service center hai jahan aapko
-    computer related har problem ka solution milega — repair, security aur website design.
-  </p>
-</section>
-
+<!-- SERVICES -->
 <section id="services">
-  <h2>Our Services & Price</h2>
-  <div class="services">
+<h2>Our Services</h2>
+<div class="services">
 
-    <div class="card">
-      <h3>Computer / Laptop Repair</h3>
-      <p>Windows install, slow PC fix, software & hardware issue</p>
-      <p><strong>Price:</strong> ₹499</p>
-      <button class="btn" onclick="openOrderForm('Computer / Laptop Repair', 499)">Order Now</button>
-    </div>
+<div class="card">
+<h3>Computer / Laptop Repair</h3>
+<p>₹499</p>
+<button class="btn" onclick="openOrder('Computer / Laptop Repair',499)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>Virus & Malware Removal</h3>
-      <p>Virus clean, antivirus setup, data protection</p>
-      <p><strong>Price:</strong> ₹399</p>
-      <button class="btn" onclick="openOrderForm('Virus & Malware Removal', 399)">Order Now</button>
-    </div>
+<div class="card">
+<h3>Virus & Malware Removal</h3>
+<p>₹399</p>
+<button class="btn" onclick="openOrder('Virus & Malware Removal',399)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>PC Full Format + Windows</h3>
-      <p>Complete format, fresh Windows & drivers install</p>
-      <p><strong>Price:</strong> ₹699</p>
-      <button class="btn" onclick="openOrderForm('PC Full Format + Windows', 699)">Order Now</button>
-    </div>
+<div class="card">
+<h3>PC Format + Windows</h3>
+<p>₹699</p>
+<button class="btn" onclick="openOrder('PC Format + Windows',699)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>Data Recovery (Basic)</h3>
-      <p>Deleted data recovery from pendrive / hard disk</p>
-      <p><strong>Price:</strong> ₹799</p>
-      <button class="btn" onclick="openOrderForm('Data Recovery (Basic)', 799)">Order Now</button>
-    </div>
+<div class="card">
+<h3>Data Recovery</h3>
+<p>₹799</p>
+<button class="btn" onclick="openOrder('Data Recovery',799)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>Antivirus Installation</h3>
-      <p>Antivirus install & lifetime basic setup</p>
-      <p><strong>Price:</strong> ₹299</p>
-      <button class="btn" onclick="openOrderForm('Antivirus Installation', 299)">Order Now</button>
-    </div>
+<div class="card">
+<h3>Antivirus Installation</h3>
+<p>₹299</p>
+<button class="btn" onclick="openOrder('Antivirus Installation',299)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>Cyber Security Setup</h3>
-      <p>Firewall, antivirus, system protection</p>
-      <p><strong>Price:</strong> ₹999</p>
-      <button class="btn" onclick="openOrderForm('Cyber Security Setup', 999)">Order Now</button>
-    </div>
+<div class="card">
+<h3>Cyber Security Setup</h3>
+<p>₹999</p>
+<button class="btn" onclick="openOrder('Cyber Security Setup',999)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>WiFi / Network Setup</h3>
-      <p>Router setup, LAN & WiFi configuration</p>
-      <p><strong>Price:</strong> ₹499</p>
-      <button class="btn" onclick="openOrderForm('WiFi / Network Setup', 499)">Order Now</button>
-    </div>
+<div class="card">
+<h3>WiFi / Network Setup</h3>
+<p>₹499</p>
+<button class="btn" onclick="openOrder('WiFi / Network Setup',499)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>Printer Setup & Repair</h3>
-      <p>Printer install, driver fix, basic repair</p>
-      <p><strong>Price:</strong> ₹399</p>
-      <button class="btn" onclick="openOrderForm('Printer Setup & Repair', 399)">Order Now</button>
-    </div>
+<div class="card">
+<h3>Printer Setup</h3>
+<p>₹399</p>
+<button class="btn" onclick="openOrder('Printer Setup',399)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>CCTV Installation (Basic)</h3>
-      <p>1–2 camera basic setup & configuration</p>
-      <p><strong>Price:</strong> ₹1499</p>
-      <button class="btn" onclick="openOrderForm('CCTV Installation (Basic)', 1499)">Order Now</button>
-    </div>
+<div class="card">
+<h3>CCTV Installation</h3>
+<p>₹1499</p>
+<button class="btn" onclick="openOrder('CCTV Installation',1499)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>Website Design (Business)</h3>
-      <p>1–5 page professional website</p>
-      <p><strong>Price:</strong> ₹2999</p>
-      <button class="btn" onclick="openOrderForm('Website Design (Business)', 2999)">Order Now</button>
-    </div>
+<div class="card">
+<h3>Website Design (Business)</h3>
+<p>₹2999</p>
+<button class="btn" onclick="openOrder('Website Design',2999)">Order Now</button>
+</div>
 
-    <div class="card">
-      <h3>Website Maintenance</h3>
-      <p>Bug fix, update, security check (monthly)</p>
-      <p><strong>Price:</strong> ₹999 / month</p>
-      <button class="btn" onclick="openOrderForm('Website Maintenance', 999)">Order Now</button>
-    </div>
-
-  </div>
+</div>
 </section>
 
+<!-- ORDER FORM -->
 <section id="order" style="display:none;">
-  <h2>Order Service</h2>
-  <div class="auth-box">
-    <input type="text" id="custName" placeholder="Your Name" />
-    <input type="text" id="custPhone" placeholder="Mobile Number" />
-    <textarea id="custAddress" placeholder="Full Address" style="width:100%;padding:10px;height:80px;"></textarea>
-    <p id="orderServiceInfo"></p>
-    <button class="btn" onclick="submitOrder()">Submit Order</button>
-  </div>
-</section>
+<h2>Order Details</h2>
+<input id="custName" placeholder="Your Name">
+<input id="custPhone" placeholder="Phone Number">
+<textarea id="custAddress" placeholder="Full Address"></textarea>
+<p id="orderInfo"></p>
 
-<section id="confirm" style="display:none;">
-  <h2>Order Confirmed ✅</h2>
-  <p>Thank you! Aapka order submit ho chuka hai.</p>
-  <p>Payment ke baad hum aapse sampark karenge.</p>
-  <a class="btn" href="#" onclick="payViaUpi()">Pay via UPI</a>
-</section>
-
-<section id="admin" style="display:none;">
-  <h2>Admin Panel (Orders)</h2>
-  <p><strong>Note:</strong> Ye sirf admin ke liye hai</p>
-  <ul id="orderList"></ul>
-</section>
-
-<section id="login">
-  <h2>Login / Signup</h2>
-  <div class="auth-box">
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
-    <button class="btn" onclick="signup()">Signup</button>
-    <button class="btn" onclick="login()">Login</button>
-    <p id="msg"></p>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact, Payment & Location</h2>
-  <p><strong>Phone / Payment:</strong> +91-9341623002</p>
-  <p><strong>Address:</strong> Pushpanjali House, Navin Nagar, Nawada, Bihar</p>
-
-  <h3>Pay Online (UPI)</h3>
-  <a class="btn"
-   href="upi://pay?pa=9341623002@axl&pn=Sarotam%20Cyber%20Shield&cu=INR"
-   Pay via UPI
-</a>
+<button class="btn" onclick="payNow()">Pay Now (UPI)</button>
 <br><br>
-
 <button class="btn" onclick="sendWhatsAppAfterPayment()">
-  Payment Done – Send WhatsApp
+Payment Done – Send WhatsApp
 </button>
-
-  <h3 style="margin-top:20px;">Scan QR (UPI)</h3>
-  <p><strong>UPI ID:</strong> 9341623002@axl</p>
-  <p style="color:#555;">(Agar QR scan na ho, to UPI ID manually enter karein)</p>
-  <!-- IMPORTANT: Apna ORIGINAL UPI QR image phone app se download karke yahan replace karein -->
-  <!-- Example: <img src="upi-qr.png" width="220" alt="UPI QR Code"> -->
-
-  <h3 style="margin-top:20px;">Our Location</h3>
-  <iframe src="https://www.google.com/maps?q=Pushpanjali%20House%20Navin%20Nagar%20Nawada%20Bihar&output=embed" width="100%" height="300" style="border:0;border-radius:10px;"></iframe>
 </section>
 
-<section id="hosting">
-  <h2>Website Hosting Guide</h2>
-  <ol>
-    <li>Domain buy karo (GoDaddy / Namecheap)</li>
-    <li>Free hosting: GitHub Pages / Netlify</li>
-    <li>index.html upload karo</li>
-    <li>Website live ho jayegi</li>
-  </ol>
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<p><b>Phone:</b> 9341623002</p>
+<p><b>Email:</b> <a href="mailto:sarotamkumar01@gmail.com">sarotamkumar01@gmail.com</a></p>
+<p><b>Address:</b> Nawada, Bihar</p>
 </section>
+
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/919341623002" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="60">
+</a>
 
 <footer>
-  <p>© 2025 Sarotam Cyber Shield | All Rights Reserved</p>
+<p>© 2025 Sarotam Cyber Shield</p>
 </footer>
 
 <script>
-  let selectedService = '';
-  let selectedPrice = 0;
+let selectedService="", selectedPrice=0;
 
-  function openOrderForm(service, price) {
-  selectedService = service;
-  selectedPrice = price;
-
-  document.getElementById("orderServiceInfo").innerHTML =
+function openOrder(service,price){
+  selectedService=service;
+  selectedPrice=price;
+  document.getElementById("order").style.display="block";
+  document.getElementById("orderInfo").innerHTML=
     `<b>Service:</b> ${service}<br><b>Amount:</b> ₹${price}`;
-
-  generateUpiQr(price);
+  location.href="#order";
 }
-    document.getElementById('orderServiceInfo').innerHTML =
-      `<strong>Service:</strong> ${service}<br><strong>Price:</strong> ₹${price}`;
-    document.getElementById('order').style.display = 'block';
-    window.location.href = '#order';
+
+function payNow(){
+  const name=custName.value;
+  const phone=custPhone.value;
+  const address=custAddress.value;
+
+  if(!name||!phone||!address){
+    alert("Please fill all details");
+    return;
   }
 
-  function submitOrder() {
-    const name = custName.value;
-    const phone = custPhone.value;
-    const address = custAddress.value;
-    if (!name || !phone || !address) {
-      alert('Fill all details');
-      return;
-    }
+  localStorage.setItem("lastOrder", JSON.stringify({
+    service:selectedService,
+    price:selectedPrice,
+    name, phone, address
+  }));
 
-    // Save order locally (admin panel ke liye)
-    const order = `${selectedService} | ₹${selectedPrice} | ${name} | ${phone} | ${address}`;
-    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
-    orders.push(order);
-    localStorage.setItem('orders', JSON.stringify(orders));
+  const upi=
+`upi://pay?pa=9341623002@axl&pn=Sarotam%20Cyber%20Shield&am=${selectedPrice}&cu=INR`;
 
-    // Order confirm page dikhao, WhatsApp abhi NAHI bhejna
-    document.getElementById('confirm').style.display = 'block';
-    window.location.href = '#confirm';
-    loadOrders();
+  window.location.href=upi;
+}
 
-    // Order details temporarily store (payment ke baad WhatsApp ke liye)
-    localStorage.setItem('lastOrderWA', JSON.stringify({
-      service: selectedService,
-      price: selectedPrice,
-      name,
-      phone,
-      address
-    }));
-  }
-
-  function sendWhatsAppAfterPayment() {
-    const data = JSON.parse(localStorage.getItem('lastOrderWA'));
-    if (!data) return;
-
-    const message = `Payment Done%0AService: ${data.service}%0APrice: ₹${data.price}%0AName: ${data.name}%0APhone: ${data.phone}%0AAddress: ${data.address}`;
-    window.open(`https://wa.me/919341623002?text=${message}`, '_blank');
-  }
-
-  function loadOrders() {
-    const list = document.getElementById('orderList');
-    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
-    list.innerHTML = '';
-    orders.forEach(o => {
-      const li = document.createElement('li');
-      li.textContent = o;
-      list.appendChild(li);
-    });
-  }
-
-  loadOrders();
-</script>
-function sendWhatsAppAfterPayment() {
-  const data = JSON.parse(localStorage.getItem('lastOrderWA'));
-  if (!data) {
-    alert("No order found");
+function sendWhatsAppAfterPayment(){
+  const data = JSON.parse(localStorage.getItem("lastOrder"));
+  if(!data){
+    alert("Please complete payment first");
     return;
   }
 
   const message =
-    `Payment Done%0AService: ${data.service}%0A` +
-    `Price: ₹${data.price}%0A` +
-    `Name: ${data.name}%0A` +
-    `Phone: ${data.phone}%0A` +
-    `Address: ${data.address}`;
+`Payment Done%0AService: ${data.service}%0AAmount: ₹${data.price}%0AName: ${data.name}%0APhone: ${data.phone}%0AAddress: ${data.address}`;
 
   window.open(
     `https://wa.me/919341623002?text=${message}`,
-    '_blank'
+    "_blank"
   );
 }
-<script>
-function payViaUpi() {
-  if (!selectedPrice) {
-    alert("Please select a service first");
-    return;
-  }
+</script>
 
-  const upiLink =
-    `upi://pay?pa=9341623002@axl&pn=Sarotam%20Cyber%20Shield&am=${selectedPrice}&cu=INR`;
-
-  window.location.href = upiLink;
-}
-  <script>
-  const ADMIN_USER = "kalyani";
-  const ADMIN_PASS = "9771659341";
-
-  let selectedService = '';
-  let selectedPrice = 0;
-function login() {
-  const user = document.getElementById('username').value;
-  const pass = document.getElementById('password').value;
-  const msg = document.getElementById('msg');
-
-  if (user === ADMIN_USER && pass === ADMIN_PASS) {
-    msg.innerText = "Admin login successful ✅";
-
-    // Admin panel show
-    document.getElementById('admin').style.display = "block";
-    window.location.href = "#admin";
-
-  } else {
-    msg.innerText = "Invalid login ❌";
-    document.getElementById('admin').style.display = "none";
-  }
-}
-
-<button class="btn" onclick="signup()">Signup</button>
-<!-- <button class="btn" onclick="signup()">Signup</button> -->
-function generateUpiQr(amount) {
-  const upiLink =
-    `upi://pay?pa=9341623002@axl&pn=Sarotam%20Cyber%20Shield&am=${amount}&cu=INR`;
-
-  document.getElementById("qrcode").innerHTML = "";
-
-  new QRCode(document.getElementById("qrcode"), {
-    text: upiLink,
-    width: 220,
-    height: 220
-  });
-}
 </body>
 </html>
